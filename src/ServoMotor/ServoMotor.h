@@ -10,18 +10,37 @@
 #ifndef ServoMotor_h
 #define ServoMotor_h
 
-#include <Servo.h>
+#include "Arduino.h"
+
+// Tenta usar a biblioteca Servo padrão se disponível
+#if __has_include(<Servo.h>)
+  #include <Servo.h>
+  #define USE_SERVO_LIB
+#endif
 
 class ServoMotor {
   public:
-    ServoMotor(int pino) : servo() { conectar(pino); }
-    void conectar(int pino) { servo.attach(pino); }
-    void escreverAngulo(int angulo) { servo.write(angulo); }
-    int lerAngulo() { return servo.read(); }
-    void desconectar() { servo.detach(); }
+    ServoMotor(int pino);
+    void escreverAngulo(int angulo);
+    int lerAngulo();
+    void desconectar();
     
-  private:
-    Servo servo;
+    // Funções de calibração PWM
+    void calibrarPWM(int pwmMin, int pwmMax);
+    void testarCalibracao();
+    void resetarCalibracao();
+    void mostrarValoresPWM();
+    
+    private:
+    int _pino;
+    int _anguloAtual;
+    bool _conectado;
+    int _pwmMin;
+    int _pwmMax;
+    
+#ifdef USE_SERVO_LIB
+    Servo _servo;
+#endif
 };
 
 #endif
