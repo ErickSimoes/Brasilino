@@ -15,6 +15,7 @@
 #define Brasilino_h
 
 #include "Ultrassom/Ultrassom.h" // Baseado na biblioteca Ultrassonic de Erick Simões
+#include "ServoMotor/ServoMotor.h"
 
 #if ARDUINO >= 100
 #include "Arduino.h"
