@@ -53,6 +53,10 @@ configurarVelocidade	KEYWORD2
 girar	KEYWORD2
 parar	KEYWORD2
 
+# Ultrassom
+lerDistancia	KEYWORD2
+definirTempoLimite	KEYWORD2
+
 # ServoMotor
 conectar	KEYWORD2
 escreverAngulo	KEYWORD2
