@@ -38,8 +38,6 @@ entrada	KEYWORD2
 entradaAlta	KEYWORD2
 definirPino	KEYWORD2
 temperatura	KEYWORD2
-Temporizando	KEYWORD2
-Medir	KEYWORD2
 modular	KEYWORD2
 restringir	KEYWORD2
 mapear	KEYWORD2
